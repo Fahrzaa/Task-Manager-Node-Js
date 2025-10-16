@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #222222;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4f46e5 0%, #418aff 25%, #ec4899 75%, #f472b6 100%);
+}
+
+.login-tab {
+    background-color: rgb(255, 255, 255);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #333(39, 39, 39);
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.input-login {
+    text-align: left;
+}
+
+.input-login input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    border-radius: 7px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.regis-tab input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #333;
+    border-radius: 7px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.regis-tab input:focus, 
+.input-login input:focus {
+    border-color: #ec540dc4;
+    box-shadow: 0 0 5px #ec540dc4;
+    transition: linear 0.2s;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: orangered;
+    color: white;
+    font-family: poppins;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    font-weight: 600;
+    margin-left: 10px;
+}

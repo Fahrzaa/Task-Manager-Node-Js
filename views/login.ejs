@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style/input.css">
+</head>
+<body>
+    <section class="login">
+        <div class="login-tab">
+            <a href="/"><i class="bi bi-arrow-left" style="font-size: 1.2rem;"></i></a>
+            <h1>Login</h1>
+            <form action="/login/submit" method="POST">
+                <div class="input-login">
+                <label for="user"><i class="bi bi-person"></i> Username</label>
+                <input type="text" id="user" name="username" placeholder="Masukkan Username" required>
+                </div>
+                <div class="input-login">
+                <label for="password"><i class="bi bi-lock"></i> Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="/regis">Sign Up</a></p>
+        </div>
+    </section>
+</body>
+</html>

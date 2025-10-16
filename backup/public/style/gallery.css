@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: #464b4b;
+    padding: 0;
+    background-color: #0f2027;
+}
+
+.main {
+    height: 100vh;
+    padding: 20px;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 70%, #ff7eb3 100%);
+    color: #fff;
+    height: 55px;
+    font-size: 0.8rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.container {
+    display: flex;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+    transition: all 0.3s ease ;
+    margin-left: 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(15,32,39,0.8) 0%, rgba(44,83,100,0.7) 60%, rgba(255,126,179,0.25) 100%);
+    color: #fff;
+   
+}
+
+.sidebar {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 70%, #ff7eb3 100%);
+    padding: 1rem;
+    width: 200px;
+    color: #fff;
+    transition: all 0.3s ease;
+    height: calc(100vh - 75px);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 1rem 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+.sidebar .another-button {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .another-button:hover {
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.25), rgba(255, 182, 193, 0.25));
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateX(8px) scale(1.05);
+}
+
+.pp {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5), 0 0 25px rgba(255, 182, 193, 0.3);
+}
+
+.pp:hover {
+    transform: scale(1.1);
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box
+}
+
+.task-input label {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.task-input input[type="text"],
+.task-input textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    
+    font-size: 16px;
+    outline: none;
+}
+
+.navbar:hover, .sidebar:hover, .main-content:hover {
+     box-shadow: 0 0 10px rgba(173, 216, 230, 0.5),
+                 0 0 20px rgba(255, 182, 193, 0.3);
+     transform: translateX(5px);
+     margin-right: 10px;
+     margin-top: 5px;
+}
+
+.submit {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-remove {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    left: 0px;
+    margin-bottom: 10px;
+}
+
+.add-todo, .remove-todo {
+    background-color: blue;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ytta {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom per baris */
+  gap: 10px; /* jarak antar gambar */
+}
+
+.image-card img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-card p {
+    font-size: smaller;
+}
+
+.image-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    justify-content: center;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    width: 200px;
+}
+
+.delete-edit {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-btn {
+    background-color: orangered;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover, .edit-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 20px;
+}
+
+.edit-btn {
+    background-color: blue;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.3s ease;
+}   

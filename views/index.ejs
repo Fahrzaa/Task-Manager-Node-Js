@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b111d;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      padding: 25px 40px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .navbar .logo h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #5cb3ff, #ff80b5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #5cb3ff, #ff80b5);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+    .sec-link {
+      border: 1.4px solid #ffffff;
+      border-radius: 8px;
+      padding: 8px 16px;
+      underline: none;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      color: #ffffff;
+    }
+
+    .sec-link:hover {
+      background: linear-gradient(90deg, #5cb3ff, #ff80b5);
+      color: #fff;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 0 20px rgba(173, 216, 230, 0.35),
+                  0 0 35px rgba(255, 182, 193, 0.25);
+    }
+
+    /* Main Section */
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url(/img/5.jpg);
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      height: 100vh;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .main > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1rem;
+      flex-wrap: wrap;
+    }
+
+    p {
+      max-width: 550px;
+      line-height: 1.6;
+      margin-top: 15px;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    /* Buttons */
+    .main-button {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .main-button a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(90deg, #5cb3ff, #ff80b5);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(92, 179, 255, 0.3);
+    }
+
+    .main-button a:hover {
+      transform: translateY(-4px) scale(1.05);
+      
+      box-shadow: 0 0 25px rgba(92, 179, 255, 0.5),
+                  0 0 40px rgba(255, 128, 181, 0.35);
+      background: linear-gradient(90deg, #0471ff, #ff4fa3);
+    }
+
+    #cihuy {
+      color: #5cb3ff;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <h1>TASK MANAGER</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <a href="/login" class="sec-link">LOGIN</a>
+      <a href="/regis" class="sec-link">SIGN UP</a>
+    </ul>
+  </nav>
+
+  <section class="main">
+    <div class="header">
+      <h1>Welcome to</h1>
+      <h1 id="cihuy">Task Manager!</h1>
+    </div>
+    <p>Your ultimate solution for organizing and managing your tasks efficiently. Stay on top of your to-do list with our intuitive interface and powerful features.</p>
+    <div class="main-button">
+      <a href="/login">Get Started</a>
+      <a href="#">Contact Me</a>
+    </div>
+  </section>
+
+  <script src="/typeit/dist/index.umd.js"></script>
+  <script>
+    new TypeIt("#cihuy", {
+      strings: ["Task Manager!", "Your Productivity Hub!"],
+      speed: 90,
+      breakLines: false,
+      loop: true,
+      deleteSpeed: 50,
+      waitUntilVisible: true,
+    }).go();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Image</title>
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #0f2027;
+            background-color: #0f2027;
+            gap: 40px;
+        }
+
+        .img-container {
+            text-align: left;
+            background: #fff;
+            padding: 20px;
+            color: #0f2027;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+         .img-container img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+         }
+
+         .edit-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         }
+
+            .save-btn, .cancel-btn {
+            padding: 12px 24px; 
+             border: none;
+             border-radius: 10px; 
+             font-family: 'Roboto', Arial, sans-serif; 
+             font-size: 16px;
+              font-weight: 500; 
+              cursor: pointer;
+              text-decoration: none; 
+              transition: all 0.3s ease; 
+              margin-right: 15px; /* Margin sedikit lebih besar untuk spacing */
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan ringan untuk tampilan 3D */
+}
+
+        .save-btn {
+             background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%); /* Gradient hijau untuk aksi positif */
+             color: white; /* Warna teks putih untuk kontras */
+}
+
+        .save-btn:hover {
+              background: linear-gradient(135deg, #45a049 0%, #66BB6A 100%); /* Gradient lebih gelap saat hover */
+             transform: translateY(-3px); /* Efek "angkat" saat hover */
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
+}
+
+        .save-btn:active {
+            transform: translateY(-1px); /* Efek tekan saat diklik */
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lebih ringan */
+}
+
+/* Desain khusus untuk .cancel-btn (merah dengan gradient) */
+        .cancel-btn {
+               background: linear-gradient(135deg, #f44336 0%, #E57373 100%); /* Gradient merah untuk aksi negatif */
+                 color: white; /* Warna teks putih untuk kontras */
+}
+
+        .cancel-btn:hover {
+             background: linear-gradient(135deg, #e53935 0%, #EF5350 100%); /* Gradient lebih gelap saat hover */
+              transform: translateY(-3px); /* Efek "angkat" saat hover */
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
+}
+
+        .cancel-btn:active {
+             transform: translateY(-1px); /* Efek tekan saat diklik */
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lebih ringan */
+}
+
+.img-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.img-container li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.img-container input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #4CAF50;
+}
+
+
+    </style>
+    <div class="main">
+                <div class="img-container">
+                    <h1>TODO LIST:</h1>
+                      <% if (task.todos.length === 0) { %>
+                        <li>No todos available.</li>
+                      <% } else { %>
+                        <% task.todos.forEach(todo => { %>
+                          <li>
+                            <input type="checkbox" <%= todo.completed ? 'checked' : '' %> >
+                            <span><%= todo %></span>
+                          </li>
+                        <% }) %>
+                      <% } %>
+                </div>
+                <div class="edit-container">
+                    <h1>Edit Task :</h1>
+
+                   <form action="/view-edit/<%= task.id %>" method="POST">
+  <label>Title:</label><br>
+  <input type="text" name="title" value="<%= task.title %>" required><br><br>
+
+  <label>Description:</label><br>
+  <textarea name="description" rows="3" required><%= task.description %></textarea><br><br>
+
+  <div class="button-group">
+    <button type="submit" class="save-btn">Save Changes</button>
+    <a href="/gallery" class="cancel-btn">Cancel</a>
+  </div>
+</form>
+
+                </div>
+            </div>
+    </div>
+</body>
+</html>

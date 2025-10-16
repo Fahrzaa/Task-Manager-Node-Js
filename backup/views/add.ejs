@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style/add.css">
+</head>
+<body>
+    <div class="main">
+    <nav class="navbar">
+        <h2>TASK MANAGER DASHBOARD</h2>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <center><img src="/img/pp.jpg" class="pp" height="80" alt="">
+            <h5>Username : <%= user.username %></h5>
+            <h4>Navigation</h4></center>
+            <ul>
+                <li><a href="/dashboard" class="another-button"><i class="bi bi-speedometer2"></i> &nbsp;Dashboard</a></li>
+                <li><a href="/add-task" class="another-button"><i class="bi bi-plus-circle"></i> &nbsp;Add Task</a></li>
+                <li><a href="/gallery" class="another-button"><i class="bi bi-image"></i> &nbsp;Gallery</a></li>
+                <li><a href="/logout" class="another-button"><i class="bi bi-box-arrow-right"></i> &nbsp;Logout</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="ytta">
+            <div class="header">
+                <h1>Add New Task</h1>
+                <span class="sub-text">Fill in the details below to create a new task</span>
+            </div>
+            <div class="add-remove">
+                <button type="button" class="add-todo" id="add-todo">+ Tambah Todo</button>
+                <button type="button" class="remove-todo" id="remove-todo">- Hapus Todo</button>
+            </div>
+            </div>
+            <form class="task-input" action="/add-task/submit" method="POST">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" required>
+
+                <label for="description">Description:</label>
+                 <textarea name="description" id="description" rows="3"></textarea>
+
+            <div id="todo-container">
+                <label>Todo List:</label>
+            <div class="todo-item">
+                 <input type="text" name="todos[]" placeholder="Masukkan todo..." required>
+            </div>
+        </div>
+                <br>
+        <div class="submit">
+            <input type="submit" class="submit-button" value="Add Task">
+            <button type="button" class="submit-button" id="clear">Clear</button>
+    </div>
+</form>
+        </div>
+    </div>
+    </div>
+
+    <script>
+  const container = document.getElementById('todo-container');
+  document.getElementById('add-todo').addEventListener('click', () => {
+    const div = document.createElement('div');
+    div.classList.add('todo-item');
+    div.innerHTML = '<input type="text" name="todos[]" placeholder="Masukkan todo..." required>';
+    container.appendChild(div);
+  });
+     document.getElementById('remove-todo').addEventListener('click', () => {
+        const items = container.getElementsByClassName('todo-item');
+        if (items.length > 1) {
+        container.removeChild(items[items.length - 1]);
+        }
+    });
+    document.getElementById('clear').addEventListener('click', () => {
+        document.getElementById('title').value = '';
+        document.getElementById('description').value = '';
+        const items = container.getElementsByClassName('todo-item');
+        while (items.length > 1) {
+            container.removeChild(items[items.length - 1]);
+        }
+        items[0].querySelector('input').value = '';
+    });
+
+</script>
+</body>
+</html>

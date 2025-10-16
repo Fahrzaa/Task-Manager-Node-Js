@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style/gallery.css">
+</head>
+<body>
+    <div class="main">
+    <nav class="navbar">
+        <h2>TASK MANAGER DASHBOARD</h2>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <center><img src="/img/pp.jpg" class="pp" height="80" alt="">
+            <h5>Username : <%= user.username %></h5>
+            <h4>Navigation</h4></center>
+            <ul>
+                <li><a href="/dashboard" class="another-button"><i class="bi bi-speedometer2"></i> &nbsp;Dashboard</a></li>
+                <li><a href="/add-task" class="another-button"><i class="bi bi-plus-circle"></i> &nbsp;Add Task</a></li>
+                <li><a href="/gallery" class="another-button"><i class="bi bi-image"></i> &nbsp;Gallery</a></li>
+                <li><a href="/logout" class="another-button"><i class="bi bi-box-arrow-right"></i> &nbsp;Logout</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="ytta">
+            <div class="header">
+                <h1>Image Library</h1>
+                <span class="sub-text">You can see all your uploaded images here</span>
+            </div>
+            <div class="add-remove">
+               <a href="/add-image" class="add-todo">+ Tambah Image</a>
+            </div>
+            </div>
+            <div class="gallery-grid">
+          <% if (images.length === 0) { %>
+            <p>No images uploaded yet.</p>
+          <% } else { %>
+            <% images.forEach(img => { %>
+              <div class="image-card">
+                <center><img src="<%= img.image_path %>" alt="<%= img.title %>" /></center>
+                <h2><%= img.title %></h2>
+                <span><%= img.description %></span>
+                <h3>Upload At:</h3>
+                <p><%= img.uploaded_at %></p>
+                <div class="delete-edit">
+                  <a href="/edit-image/<%= img.id %>" class="edit-btn"><i id="ytta" class="bi bi-pencil"></i></a>
+                  <a href="/delete-image/<%= img.id %>" class="delete-btn"><i class="bi bi-trash"></i></a>
+                  
+                </div>
+              </div>
+            <% }) %>
+          <% } %>
+    </div>
+    </div>
+</script>
+</body>
+</html>

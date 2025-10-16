@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: #2f2f2f;
+    padding: 0;
+    background-color: #f6f8fa;
+}
+
+.main {
+    height: 100vh;
+    padding: 20px;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #4f8efc 0%, #a55eea 100%);;
+    color: #fff;
+    height: 60px;
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:  0 8px 25px rgba(0, 0, 0, 0.06);;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(79,142,252,0.3);
+}
+
+.container {
+    display: flex;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.sidebar {
+    background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+    padding: 1rem;
+    width: 220px;
+    color: #333;
+    transition: all 0.3s ease;
+    height: calc(100vh - 75px);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 1rem 0;
+}
+
+.sidebar .another-button {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sidebar .another-button:hover {
+    background: linear-gradient(135deg, #e8f0fe, #f5f9ff);
+    color: #1a73e8;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transform: translateX(5px);
+}
+
+.main-content {
+    flex: 1;
+    padding: 1.2rem;
+    margin-left: 10px;
+    border-radius: 16px;
+    background: #ffffff;
+    color: #333;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.pp {
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.pp:hover {
+    transform: scale(1.05);
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.task-input label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.task-input input[type="text"],
+.task-input textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdfe3;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+.task-input input:focus,
+.task-input textarea:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 5px rgba(26,115,232,0.2);
+    background-color: #fff;
+}
+
+.add-task {
+    background: linear-gradient(135deg, #1a73e8, #4f9efc);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(26,115,232,0.25);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(26,115,232,0.3);
+}
+
+.submit {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.add-remove {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    left: 20px;
+    margin-bottom: 10px;
+}
+
+.add-todo, .remove-todo {
+    border: none;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 6px;
+    padding: 8px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.add-todo {
+    background: #1a73e8;
+}
+
+.remove-todo {
+    background: #e53935;
+}
+
+.add-todo:hover {
+    background: #1669d8;
+}
+
+.remove-todo:hover {
+    background: #d93025;
+}
+
+.ytta {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    width: 60%;
+    padding: 10px;
+    background: #1a73e8;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(26,115,232,0.25);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #1669d8;
+    transform: translateY(-2px);
+}
+
+.navbar:hover, .sidebar:hover, .main-content:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+}
+.main-button {
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.2), rgba(255, 182, 193, 0.2));
+    color: #333;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px;
+}
+
+.image-card {
+    background: #fcfcfc;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    color: #272525;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.image-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+.image-card p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 12px 0 0 0;
+    font-weight: 500;
+}
+
+.image-card small {
+    display: block;
+    padding: 0 16px 16px 16px;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.delete-edit {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 0 16px 16px 16px;
+}
+
+.edit-btn, .delete-btn {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #d93025;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.edit-btn {
+    background-color: #1a73e8;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    transform: translateY(-5px);
+}

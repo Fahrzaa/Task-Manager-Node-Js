@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style/input.css">
+</head>
+<body>
+    <section class="login">
+        <div class="login-tab">
+            <h1>Add Images</h1>
+            <form action="/add-image/submit" method="POST" enctype="multipart/form-data">
+                <div class="regis-tab">
+                <label for="title"><i class="bi bi-card-text"></i> Image Title</label>
+                <input type="text" name="title" placeholder="Enter Image Title" required>
+                </div>
+                <div class="regis-tab">
+                <label for="description"><i class="bi bi-card-text"></i> Image Description</label>
+                <input type="text" name="description" placeholder="Enter Image Description" required>
+                </div>
+                <div class="regis-tab">
+                <label for="image"><i class="bi bi-image"></i> Select Image</label>
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Upload Image</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

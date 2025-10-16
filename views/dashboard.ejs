@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style/dashboard.css">
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <h2>TASK MANAGER</h2>
+        </nav>
+
+        <div class="container">
+            <div class="sidebar">
+                <center>
+                    <img src="/img/pp.jpg" class="pp" height="80" alt="">
+                    <h5>Username : <%= user.username %></h5>
+                    <h4>Navigation</h4>
+                </center>
+                <ul>
+                    <li><a href="/dashboard" class="another-button"><i class="bi bi-speedometer2"></i> &nbsp;Dashboard</a></li>
+                    <li><a href="/add-task" class="another-button"><i class="bi bi-plus-circle"></i> &nbsp;Add Task</a></li>
+                    <li><a href="/gallery" class="another-button"><i class="bi bi-image"></i> &nbsp;Gallery</a></li>
+                    <li><a href="/logout" class="another-button"><i class="bi bi-box-arrow-right"></i> &nbsp;Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="main-content">
+                <h1>Welcome to your Dashboard <span class="user-name"></span></h1>
+                <p>Here you can manage your tasks, projects, and teams.</p>
+
+                <div class="task-result">
+                    <% if (tasks.length === 0) { %>
+                        <div class="head"><center><span>No tasks yet</span></center></div></div>
+                    <% } else { %>
+                        <% tasks.forEach(task => { %>
+                            <div class="task-item">
+                                <div class="yoi"><h2><%= task.title %></h2>
+                                <div class="tes">
+                                    <a href="/view/<%= task.id %>" class="see-btn"><i class="bi bi-eye"></i></a>
+                                    <a href="/delete/<%= task.id %>" class="delete-btn"><i class="bi bi-trash"></i></a>
+                                </div>
+                                </div>
+                                
+                                <h3>Description</h3>
+                                <span><%= task.description %></span>
+                                <div class="groupB">
+                                <div class="y">
+                                     <h3>Created At</h3>
+                                <small><%= task.created_at.toLocaleString() %></small>
+                                </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
