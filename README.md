@@ -33,9 +33,12 @@ Pengguna dapat menambahkan, melihat, mengedit, dan menghapus task dengan tampila
 
 ---
 
+MASIH BELUM RESPONSIVE, TIDAK PUNYA WAKTU BUAT HAL TSB MASIH BANYAK PROJECT YANG HARUS DI KERJAKAN DAN INI HANYA PROJECT WAKTU LUANG
+
 ## 📦 Instalasi & Setup
 
 1. **Clone repository**
    ```bash
    git clone https://github.com/username/task-manager.git
    cd task-manager
+
